@@ -1,9 +1,9 @@
 <?php
 // --- Configuration (MUST BE UPDATED) ---
-$host = 'localhost';
-$db   = 'webtech_2025A_bridgetta_akoto';      // UPDATE this to your actual database name
-$user = 'bridgetta.akoto';              // UPDATE this to your actual database user
-$pass = 'Bri&moo000';          // UPDATE this to your actual database password
+$host = 'sql206.infinityfree.com';
+$db   = 'if0_40722582_lash_nouveau_db';      // UPDATE this to your actual database name
+$user = 'if0_40722582';              // UPDATE this to your actual database user
+$pass = 'danita0sharon0';          // UPDATE this to your actual database password
 $charset = 'utf8mb4';
 $lash_tech_email = 'sedemdoku12@example.com'; // UPDATE this email address for notifications
 // ----------------------------------------
