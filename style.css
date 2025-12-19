@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root{
+  --pastel-1: #fde3ec;
+  --pastel-2: #f8bfd4;
+  --pastel-3: #f5a6c6;
+  --deep-pink: #D63384;
+  --deep-pink-dark: #b40055;
+  --white: #ffffff;
+  --text: #4a4a4a;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: 'Playfair Display', serif;
+  color:var(--text);
+  background: linear-gradient(135deg, var(--pastel-1), var(--pastel-2), var(--pastel-3));
+  background-size:300% 300%;
+  animation: gradientMove 12s ease infinite;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+header{
+  position:fixed;
+  top:0; left:0; width:100%;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 28px;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.42);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  z-index:20;
+}
+.logo{ color:var(--deep-pink); font-weight:700; font-size:20px; letter-spacing:0.4px;}
+nav{ display:flex; gap:18px; align-items:center;}
+nav a{
+  color:var(--deep-pink);
+  text-decoration:none;
+  font-weight:600;
+  transition: color .25s ease, transform .25s ease;
+}
+nav a:hover{ color:var(--deep-pink-dark); transform:translateY(-2px); }
+
+.container{ width:92%; max-width:1100px; margin:100px auto 60px; }
+
+.hero{
+  min-height:56vh; display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:60px 20px; border-radius:12px;
+}
+.hero h1{ margin:0 0 12px; color:var(--deep-pink-dark); font-size:34px; }
+.hero p{ margin:0 0 20px; color:#6b3b52; font-size:16px; }
+
+.btn{
+  background: var(--deep-pink);
+  color:var(--white);
+  padding:12px 26px; border-radius:28px; text-decoration:none;
+  display:inline-block; font-weight:600; box-shadow:0 6px 14px rgba(182,32,118,0.14);
+  border:0; cursor:pointer; transition: background .35s ease, transform .25s ease, box-shadow .25s ease;
+}
+.btn:hover{
+  background: var(--deep-pink-dark);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:0 10px 26px rgba(180,26,102,0.18);
+}
+
+/* Variant buttons reusing the color palette */
+.btn-secondary{
+  background: #4a90e2; /* blue accent */
+  color: var(--white);
+}
+.btn-secondary:hover{ background:#2f76c8 }
+.btn-danger{
+  background: #e05252; /* danger */
+  color: var(--white);
+}
+.btn-danger:hover{ background:#c64040 }
+
+/* Visual state for selected extras */
+.selected-extra{
+  background: var(--deep-pink-dark) !important;
+  color: white !important;
+}
+
+.grid{ display:grid; gap:18px; grid-template-columns:repeat(2, 1fr); }
+@media (max-width:720px){ .grid{ grid-template-columns:1fr; } }
+
+.card{
+  background:var(--white); padding:18px; border-radius:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.06); transition: transform .22s ease, box-shadow .22s ease;
+}
+.card:hover{ transform: translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,0.09); }
+
+.service-title{ font-size:18px; color:var(--deep-pink-dark); margin-bottom:8px; font-weight:600; }
+.price{ color:#7a2e4e; font-weight:700; margin-bottom:6px; }
+.duration{ color:#666; font-size:13px; margin-bottom:12px; }
+.group-title{ margin:28px 0 12px; font-size:20px; color:var(--deep-pink); text-align:left; }
+
+.persons {
+  background:rgba(255,255,255,0.95);
+  padding:14px; border-radius:12px; display:flex; align-items:center; gap:12px;
+  justify-content:space-between; box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-top:22px;
+}
+.person-controls{ display:flex; gap:8px; align-items:center; }
+.person-controls button{
+  width:36px; height:36px; border-radius:8px; border:0; background:var(--deep-pink); color:white; font-weight:700; cursor:pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.person-controls button:disabled{ background:#e6a6c2; cursor:not-allowed; }
+.person-count{ min-width:32px; text-align:center; font-weight:700; }
+
+input[type="date"], input[type="time"], textarea{
+  width:100%; padding:10px; border-radius:8px; border:1px solid #eee; font-family:inherit;
+}
+
+footer{ text-align:center; padding:28px 8px; color:#fff; margin-top:30px; }
+
+footer .small-muted a,
+footer .small-muted a:link,
+footer .small-muted a:visited {
+  color: var(--deep-pink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer .small-muted a:hover,
+footer .small-muted a:focus {
+  color: var(--deep-pink-dark);
+  text-decoration: underline;
+}
+
+.note{ font-size:13px; color:#5d4a55; }
+.small-muted{ font-size:13px; color:#666; }
+
+
+/* Styling for all text-based inputs to match the classy theme */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"], 
+input[type="date"], 
+input[type="time"], 
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 12px; /* Matching the card softness */
+  border: 2px solid #eee; /* Light neutral border */
+  background: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.3s ease; /* Smooth transition for the "glow" */
+  outline: none;
+}
+
+/* The "Brighter" effect when the user is typing (Focus State) */
+input:focus, textarea:focus {
+  border-color: var(--pastel-3); /* Brighter pink border */
+  box-shadow: 0 0 8px rgba(214, 51, 132, 0.2); /* Soft pink glow */
+  background: #fff;
+}
+
+/* This makes the "Headline" (label) change color when the input below it is active */
+.form-group:focus-within .group-title {
+  color: var(--deep-pink-dark);
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
