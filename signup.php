@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Please provide a valid email address.';
     } else {
         // 1. Check if email already exists
-        $stmt = $pdo->prepare('SELECT id FROM individual WHERE email = :email LIMIT 1');
+        $stmt = $pdo->prepare('SELECT id FROM users WHERE email = :email LIMIT 1');
         $stmt->execute(['email' => $email]);
         
         if ($stmt->fetch()) {
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             // 3. Insert into the database
             try {
-                $ins = $pdo->prepare('INSERT INTO individual (name, email, password_hash, role) VALUES (:name, :email, :ph, "user")');
+                $ins = $pdo->prepare('INSERT INTO users (name, email, password_hash, role) VALUES (:name, :email, :ph, "user")');
                 $ins->execute([
                     'name' => $name,
                     'email' => $email,
