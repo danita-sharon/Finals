@@ -155,7 +155,7 @@ function generate_footer(): void {
 
         <div class="footer-contact">
           <h4>Contact Us</h4>
-          <p>Email: support@kingsprincess.com</p>
+          <p>Email: danitasharon@gmail.com</p>
           <p>Phone: +233 55 123 4567</p>
           <p>Address: Accra, Ghana</p>
       </div>
