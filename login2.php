@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Please enter both email and password.';
     } else {
         // Fetch user based on email
-        $stmt = $pdo->prepare('SELECT id, name, email, password_hash, role FROM individual WHERE email = :email AND is_active = 1 LIMIT 1');
+        $stmt = $pdo->prepare('SELECT id, name, email, password_hash, role FROM users WHERE email = :email AND is_active = 1 LIMIT 1');
         $stmt->execute(['email' => $email]);
         $user = $stmt->fetch();
 
